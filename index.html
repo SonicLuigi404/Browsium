@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browsium - O navegador feito para você</title>
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            color: #202124;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 32px;
+            background-color: #ffffff;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-left img {
+            height: 36px;
+            width: auto;
+            object-fit: contain;
+        }
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #5f6368;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #1a73e8;
+        }
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 72px 20px;
+            background: radial-gradient(circle at top, #f1f6fe 0%, #ffffff 65%);
+        }
+        .hero-logo {
+            height: 84px;
+            width: auto;
+            margin-bottom: 24px;
+            object-fit: contain;
+        }
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: #202124;
+            max-width: 760px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #5f6368;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 36px;
+        }
+        .download-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #1a73e8;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 36px;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+            transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+        }
+        .btn-download:hover {
+            background-color: #1557b0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(26, 115, 232, 0.4);
+        }
+        .system-info {
+            font-size: 13px;
+            color: #5f6368;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: 1040px;
+            width: 100%;
+            margin: 20px auto 80px;
+            padding: 0 24px;
+        }
+        .card {
+            background-color: #f8f9fa;
+            border-radius: 24px;
+            padding: 32px;
+            text-align: left;
+            border: 1px solid #e8eaed;
+        }
+        .card h3 {
+            font-size: 20px;
+            color: #202124;
+            margin-bottom: 12px;
+        }
+        .card p {
+            font-size: 15px;
+            color: #5f6368;
+            line-height: 1.5;
+        }
+        .install-steps {
+            background-color: #f1f3f4;
+            padding: 56px 24px;
+            text-align: center;
+        }
+        .install-steps h2 {
+            font-size: 30px;
+            margin-bottom: 24px;
+            color: #202124;
+        }
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .step {
+            background: #ffffff;
+            padding: 20px 28px;
+            border-radius: 16px;
+            flex: 1 1 250px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            font-size: 15px;
+            color: #3c4043;
+        }
+        .step strong {
+            display: block;
+            color: #1a73e8;
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+        footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #dadce0;
+            padding: 32px 24px;
+            text-align: center;
+            color: #5f6368;
+            font-size: 14px;
+        }
+        .credits {
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .credits strong {
+            color: #202124;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <img src="logo.png" alt="Logo Browsium">
+        </div>
+        <nav>
+            <a href="#recursos">Recursos</a>
+            <a href="#instalacao">Como Usar</a>
+            <a href="#creditos">Créditos</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img class="hero-logo" src="logo.png" alt="Browsium">
+        <h1>O navegador clássico e moderno feito para você</h1>
+        <p>Experimente a velocidade do motor Chromium moderno combinada com a leveza e o visual nostálgico do Windows 7 Basic em um pacote leve e direto ao ponto.</p>
+        
+        <div class="download-box">
+            <a href="Browsium.zip" download="Browsium.zip" class="btn-download">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Fazer o download do Browsium
+            </a>
+            <span class="system-info">Para Windows 10 e Windows 11 (64 bits e 32 bits) • Arquivo Browsium.zip</span>
+        </div>
+    </section>
+
+    <section id="recursos" class="features">
+        <div class="card">
+            <h3>Motor Chromium Moderno</h3>
+            <p>Navegue em qualquer site atual, assista a vídeos e acesse aplicativos web com total compatibilidade graças à integração nativa com WebView2.</p>
+        </div>
+        <div class="card">
+            <h3>Visual Windows 7 Basic</h3>
+            <p>Interface limpa com a moldura clássica ativada diretamente via DWM do Windows, unindo nostalgia e praticidade no dia a dia.</p>
+        </div>
+        <div class="card">
+            <h3>Leve e Portátil</h3>
+            <p>Compilado nativamente sem instaladores pesados. Basta extrair o pacote ZIP e iniciar o navegador imediatamente.</p>
+        </div>
+    </section>
+
+    <section id="instalacao" class="install-steps">
+        <h2>Como iniciar o Browsium</h2>
+        <div class="steps-container">
+            <div class="step">
+                <strong>1. Baixe o pacote</strong>
+                Clique no botão acima para baixar o arquivo <b>Browsium.zip</b> para o seu computador.
+            </div>
+            <div class="step">
+                <strong>2. Extraia os arquivos</strong>
+                Clique com o botão direito em <b>Browsium.zip</b> e selecione "Extrair tudo" em uma pasta de sua preferência.
+            </div>
+            <div class="step">
+                <strong>3. Abra o navegador</strong>
+                Execute o inicializador ou o script <b>Browsium.ps1</b> dentro da pasta extraída para abrir o navegador.
+            </div>
+        </div>
+    </section>
+
+    <footer id="creditos">
+        <div class="credits">
+            <p><strong>Créditos do Projeto Browsium</strong></p>
+            <p>Idealizado, desenvolvido e projetado por <strong>Augusto Sirqueira</strong>.</p>
+            <p>Identidade visual, ícone e logotipo criados exclusivamente para o Browsium.</p>
+            <p>Tecnologias utilizadas: C# (.NET Framework), PowerShell, C++ Launcher, Windows DWM API e Microsoft Edge WebView2.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
